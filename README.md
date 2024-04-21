@@ -1,7 +1,7 @@
 # Easy Highlight TextBlock
 ## Introduce
-**When developing a WPF project** , I often use the TextBlock control. I feel **ball-ache** When I want to highlight a string within a TextBlock! 
-for example here's the code to Highlight Text within yellow :
+**When developing a WPF project** , I often use the TextBlock. I feel **ball-ache** When I want to highlight the string of TextBlock !!
+for example here's the code to Highlight Text by yellow :
 
 ```c#
 // set the text background to yellow ~~
@@ -30,23 +30,13 @@ It`s Cool !!!
 - Search "**EasyHighlightTextBlock**" in Nuget and Install it
   ![EasyHightlightTExt](https://github.com/zuweie/photobed/blob/master/QQ%E5%9B%BE%E7%89%8720240421201744.png?raw=true)
   
-- SetUp EasyHighlightTextBlock in any xaml file
-  ```xml
-  <Window x:Class="TestHL.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TestHL"
-        <!-- define a namespae for EasyHighlightTextBlock in xaml file -->
-        xmlns:ehl="clr-namespace:EasyHighlight;assembly=EasyHighlightText"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1200">
-    <Grid>
-        <ehl:EasyHighlightTextBlock x:Name="M_EText1" Text="&lt;yello>yellow&lt;/yellow> example" FontSize="20" Grid.Row="3" Margin="10,20"/>
-    </Grid>
-</Window>
-  ```
+- SetUp EasyHighlightTextBlock in some xaml file
+```xml
+```
+  
+
+>if you assign the string to Text attribute directly in xmal, then the chart '<' has to replace by "\&lt;"
+
 
 
 
