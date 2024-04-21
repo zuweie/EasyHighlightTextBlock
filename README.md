@@ -11,11 +11,17 @@ TextBlock.Inlines.add(yellowRun);
 
 ```
 
-I'm not a fan of the hassle, and I find this highlighting method not only inelegant but also cumbersome, like shit. So, I've modified the TextBlock to recognize tags within the string it renders, and based on different tags, achieve varying highlighting effects such as:
+I'm not a fan of the hassle, and I find this highlighting method not only inelegant but also cumbersome, like shit. So, I've modified the TextBlock to recognize tags within the string it renders, and based on different tags, achieve varying highlighting effects,as simple as you do this in html, such as Text bel:
 
 ```C#
-TextBlock.Text = "<i>This</i> is <gray>an</gray> <yellow>Example</yellow> for a <red>long</red> string to <green>show</green> how the <b>EsayHighlight</b> Text <u>Block</u> <purple>works!</purple> <del>Hahah</del>";
+string text
+  = "<i>This</i> is <gray>an</gray> <yellow>Example</yellow> for a <red>long</red>
+     string to <green>show</green> how the <b>EsayHighlight</b> Text <u>Block</u> <purple>works!</purple> <del>Hahah</del>";
 ```
+
+Then you'll achieve an effect like this:
+
+
 
 
 
