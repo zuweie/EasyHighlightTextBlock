@@ -1,7 +1,7 @@
 # Easy Highlight TextBlock
 
 
-**When developing a WPF project** , I often use the TextBlock control. When I want to highlight a string within a TextBlock, here's the code I need:
+**When developing a WPF project** , I often use the TextBlock control. I feel **ball-ache** When I want to highlight a string within a TextBlock! here's the code I need:
 
 ```c#
 // set the text background to yellow ~~
@@ -11,7 +11,7 @@ TextBlock.Inlines.add(yellowRun);
 
 ```
 
-I'm not a fan of the hassle, and I find this highlighting method not only inelegant but also cumbersome, like shit. So, I've modified the TextBlock to recognize tags within the string it renders, and based on different tags, achieve varying highlighting effects,as simple as you do this in html, such as Text bel:
+I'm not a fan of the hassle, and I find this highlighting method not only inelegant but also cumbersome, like shit. So, I've modified the TextBlock to recognize tags within the string it renders, and based on different tags, achieve varying highlighting effects,as simple as you do this in html, such as Text :
 
 ```C#
 string text
@@ -19,7 +19,8 @@ string text
      string to <green>show</green> how the <b>EsayHighlight</b> Text <u>Block</u> <purple>works!</purple> <del>Hahah</del>";
 ```
 
-Then you'll achieve an effect like this:
+Then you'll get Highlight Text like this:
+![EasyHighlightTextBlock](https://raw.githubusercontent.com/zuweie/photobed/master/QQ%E5%9B%BE%E7%89%8720240421153105.png)
 
 
 
