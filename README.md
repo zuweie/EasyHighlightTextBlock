@@ -1,2 +1,2 @@
 # EasyHighlightTextBlock
-A new high light way with html style for Textblock in wpf
+A new high light way with html style for Textblock in Windows
