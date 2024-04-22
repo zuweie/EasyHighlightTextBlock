@@ -53,7 +53,16 @@ It`s Cool !!!
 >Notice: if you assign the string to Text attribute in xmal directly, then the chart '<' has to replace by "\&lt;"
 
 ## Supported Tags
-
+|No|Tags|effects|
+|--|--|--|
+|1|\<yellow\>\<\\yellow\>|Yellow background|
+|2|\<gree\>\<\\green\>|Green background|
+|3|\<red\>\<\\red\>|Red background|
+|4|\<purple\><\\<purple\>|Purple background|
+|5|\<i\>\<\\i\>|*Italics*|
+|6|\<b\>\<\\b\>|**Blod**|
+|7|\<u\>\<\\u\>|__underline__|
+|8|\<del\>\<\\del\>|~~Strikethrough~~|
 
 
 
