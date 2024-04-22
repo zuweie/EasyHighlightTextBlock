@@ -54,6 +54,7 @@ It`s Cool !!!
 
 ## Supported Tags
 >Here is a few Tags supported by My **Implement**：
+
 |No|Tags|effects|
 |--|--|--|
 |1|\<yellow\>\<\\yellow\>|![yellow](https://github.com/zuweie/photobed/blob/master/QQ%E5%9B%BE%E7%89%8720240422080706.png?raw=true)|
@@ -66,7 +67,39 @@ It`s Cool !!!
 |7|\<u\>\<\\u\>|__underline__|
 |8|\<del\>\<\\del\>|~~Strikethrough~~|
 
-## 
+## Design Your Own Tags
+If the above tags don't fit your needs, you can design your own. 
+- Firstly Name your own tag for example "red-del", means draw a red background and a strikethrough line to the string.
+- Secondly do the Implement (how to draw) by the interface "addDecorater" of EasyHighlightTextBlock:
+
+```C#
+public partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        InitializeComponent();
+
+        easyHighlight.addDecorater("red-del", (string text, string tagName) => {
+            // new a run
+            Run redDelRun = new Run(text);
+            // draw a striethroug line
+            TextDecoration strikethrough = new TextDecoration();
+            strikethrough.PenThicknessUnit = TextDecorationUnit.FontRecommended;
+            strikethrough.Pen = new Pen(Brushes.Black, 1.5);
+            strikethrough.Location = TextDecorationLocation.Strikethrough;
+            redDelRun.TextDecorations.Add(strikethrough);
+
+            // draw a red background
+            Color color = (Color)ColorConverter.ConvertFromString("red");
+            redDelRun.Background = Brushes.Red;
+            return redDelRun;
+        });
+        
+        return;
+    }
+}
+
+```
 
 
 
