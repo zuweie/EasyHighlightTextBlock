@@ -1,4 +1,5 @@
 # Easy Highlight TextBlock
+
 >A Easy Way to Highlight the Text using \<Tags\> like a html 
 
 ## Introduce
@@ -93,6 +94,7 @@ public partial class MainWindow : Window
             // draw a red background
             Color color = (Color)ColorConverter.ConvertFromString("red");
             redDelRun.Background = Brushes.Red;
+            // return the object RUN is IMPORTANT!!!
             return redDelRun;
         });
         
@@ -130,9 +132,11 @@ It will be look like this:
 > 
 > **tagName** is the Tag.
 > 
-> all the decoration is coding on the objct call **"Run"**, So you must return this object, otherwise There will not any effects on self-define Tags.
+> all the decoration is be coding on the objct call **"Run"**, So you must return this object, otherwise There will no fucking things will be happend.
 >
-> 2、The **tagName** I just simply use The regular expression **\w+** to matche, So your tags must be **one or more alphanumeric characters (including letters, numbers, and underscores)**.
+> 2、For The **tagName** I just simply use The regular expression **\w+** to matche, So your tags must be **one or more alphanumeric characters (including letters, numbers, and underscores)**. Don`t use any strange and special chart.
 > 
 
+## last
+If you also neet to Hightligth the Text in TextbBlock. **TRY** this SHIT bro !!!
 
