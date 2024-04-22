@@ -134,9 +134,9 @@ It will be look like this:
 > 
 > 2、All the decoration is be coding on the objct call **"Run"**, So you must return this object, otherwise There will no **fucking things** would be happend.
 >
-> 3、For The **tagName** I just simply use The regular expression **\w+** to matche, So your tags must be **one or more alphanumeric characters (including letters, numbers, and underscores)**. Don`t use any strange and special chart.
+> 3、For The **tagName** I just simply use The regular expression **\w+** to matche, So your tags must be **one or more alphanumeric characters (including letters, numbers, and underscores, [a-zA-Z0-9_])**. Don`t use any strange and special chart.
 > 
 
 ## last
-If you also neet to Hightligth the Text in TextbBlock. **TRY** this SHIT bro !!!
+If you neet to Hightligth the Text in TextbBlock too. **TRY** this SHIT bro !!! Any Problem contect me on email:51930595@qq.com
 
