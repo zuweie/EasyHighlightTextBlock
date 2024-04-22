@@ -70,7 +70,7 @@ It`s Cool !!!
 
 ## Design Your Own Tags
 If the above tags don't fit your needs, you can design your own. 
-- Firstly Name your own tag for example "red-del", means draw a red background and a strikethrough line to the string.
+- Firstly Name your own tag, for example "red_del", means draw a red background and a strikethrough line to the string.
 - Secondly do the Implement (how to draw) by the interface "addDecorater" of EasyHighlightTextBlock:
 
 ```C#
