@@ -132,9 +132,9 @@ It will be look like this:
 > 
 > **tagName** is the Tag.
 > 
-> all the decoration is be coding on the objct call **"Run"**, So you must return this object, otherwise There will no fucking things will be happend.
+> 2、All the decoration is be coding on the objct call **"Run"**, So you must return this object, otherwise There will no **fucking things** would be happend.
 >
-> 2、For The **tagName** I just simply use The regular expression **\w+** to matche, So your tags must be **one or more alphanumeric characters (including letters, numbers, and underscores)**. Don`t use any strange and special chart.
+> 3、For The **tagName** I just simply use The regular expression **\w+** to matche, So your tags must be **one or more alphanumeric characters (including letters, numbers, and underscores)**. Don`t use any strange and special chart.
 > 
 
 ## last
