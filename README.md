@@ -138,5 +138,5 @@ It will be look like this:
 > 
 
 ## last
-If you neet to Hightligth the Text in TextbBlock too. **TRY** this SHIT bro !!! Any Problem contect me on email:51930595@qq.com
+If you neet to Hightligth the Text in TextbBlock too. **TRY** this SHIT !!! Any Problem contect me on email:51930595@qq.com
 
