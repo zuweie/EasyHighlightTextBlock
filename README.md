@@ -46,7 +46,7 @@ It`s Cool !!!
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1200">
     <Grid>
-        <ehl:EasyHighlightTextBlock x:Name="M_EText1" Text="&lt;i>This&lt;/i> is &lt;gray>an&lt;/gray> &lt;yellow>Example&lt;/yellow> for a &lt;red>long&lt;/red> string to &lt;green>show&lt;/green> how the &lt;b>EsayHighlight&lt;/b> Text &lt;u>Block&lt;/u> &lt;purple>works!&lt;/purple> &lt;del>Hahah&lt;/del>" FontSize="20" Grid.Row="3" Margin="10,20"/>
+        <ehl:EasyHighlightTextBlock x:Name="easyHText" Text="&lt;i>This&lt;/i> is &lt;gray>an&lt;/gray> &lt;yellow>Example&lt;/yellow> for a &lt;red>long&lt;/red> string to &lt;green>show&lt;/green> how the &lt;b>EsayHighlight&lt;/b> Text &lt;u>Block&lt;/u> &lt;purple>works!&lt;/purple> &lt;del>Hahah&lt;/del>" FontSize="20" Grid.Row="3" Margin="10,20"/>
     </Grid>
 </Window>
 ```
@@ -97,14 +97,16 @@ public partial class MainWindow : Window
             // return the object RUN is IMPORTANT!!!
             return redDelRun;
         });
-        
+
+        // setup Text on xmal, or here !!!
+        easyHText.Text = "<red_del>red_del</red_del> example."
         return;
     }
 }
 
 ```
 
-```Xml
+```Xaml
 <Window x:Class="TestHL.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
