@@ -26,6 +26,7 @@ namespace EasyHighlight
         public void addDecorater(string tag, Func<string, string, Run> decorater)
         {
             M_decoraters.Add(tag, decorater);
+            this.UpdateText();
         }
 
 
@@ -62,12 +63,12 @@ namespace EasyHighlight
                     Inlines.Add(unDecorateTextRun);
                 }
                 string TagName = match.Groups[1].Value;
-                Func<string,string, Run> decorate = (Func<string, string, Run>)M_decoraters[TagName];
+                Func<string, string, Run> decorter = null;
                 Run decorateTextRun = null;
 
-                if (decorate != null) { 
+                if (M_decoraters.TryGetValue(TagName, out decorter)) { 
 
-                    decorateTextRun = decorate(match.Groups[2].Value, match.Groups[1].Value);
+                    decorateTextRun = decorter(match.Groups[2].Value, match.Groups[1].Value);
                     if (decorateTextRun == null)
                     {
                         // 如果他妈的有傻逼返回空的 Run，则将原来的字符串弄回去。
@@ -77,7 +78,7 @@ namespace EasyHighlight
 
                 } else {
                     
-                    // 没找到相应的 decorate 的，直接把原来的 string 弄回去。
+                    // 没找到相应的 decorater 的，直接把原来的 string 弄回去。
                     decorateTextRun = new Run(match.Groups[1].Value);
                     decorateTextRun.Style = originStyle;
                 }
