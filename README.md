@@ -21,7 +21,7 @@ string text
   = "<i>This</i> is <gray>an</gray> <yellow>Example</yellow> for a <red>long</red>
      string to <green>show</green> how the <b>EsayHighlight</b> Text <u>Block</u> <purple>works!</purple> <del>Hahah</del>";
 
-EasyHighlightTextBlock.Text = string;
+EasyHighlightTextBlock.Text = text;
 ```
 
 Then you'll get Highlight Text like this:
