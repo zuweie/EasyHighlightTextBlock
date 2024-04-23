@@ -65,7 +65,7 @@ It`s Cool !!!
 |5|\<gray\>\<\\gray\>|![gray](https://github.com/zuweie/photobed/blob/master/QQ%E5%9B%BE%E7%89%8720240422080645.png?raw=true)|
 |5|\<i\>\<\\i\>|*Italics*|
 |6|\<b\>\<\\b\>|**Blod**|
-|7|\<u\>\<\\u\>|__underline__|
+|7|\<u\>\<\\u\>| <ins>underline</ins> |
 |8|\<del\>\<\\del\>|~~Strikethrough~~|
 
 ## Design Your Own Tags
