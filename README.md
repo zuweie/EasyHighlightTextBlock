@@ -139,6 +139,79 @@ It will be look like this:
 > 3、For The **tagName** I just simply use The regular expression **\w+** to matche, So your tags must be **one or more alphanumeric characters (including letters, numbers, and underscores, [a-zA-Z0-9_])**. Don`t use any strange and special chart.
 > 
 
+## autoHgihlight
+If you find all the highlighting methods too cumbersome, I've also prepared a more convenient interface for you: **autoHighlight**.
+```C#
+easyHighlightTextBlock.autoHighlight("tag", "target-str-you-want-to-hightlight");
+```
+- **tag** means the <tag> supported by the easyHighlightTextblock
+- **target-str-you-want-to-hightlight** means you want to highlight in easyhgihlightTextblock
+
+Example:
+in xmal:
+```C#
+<Window x:Class="TestHL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestHL"
+        xmlns:ehl="clr-namespace:EasyHighlight;assembly=EasyHighlightText"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1200">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="2.5*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Name="M_TextBox" TextChanged="TextChangedEventHandler" FontSize="20" Grid.Row="0" Margin="10,20"/>
+        <ehl:EasyHighlightTextBlock Name="easyHighlight1" FontSize="14" Text="Audrey Hepburn, an iconic figure of elegance and grace, captivated audiences with her timeless beauty and talent. Renowned for her iconic roles in films like Breakfast at Tiffany and Roman Holiday, she left an indelible mark on Hollywood. Beyond her acting prowess, Hepburn's humanitarian work and timeless style continue to inspire generations worldwide."  TextWrapping="Wrap" Grid.Row="1" Margin="10, 20"/>
+        <TextBlock Name="M_test2" Text="&lt;red_del>red_del&lt;/red_del> example"  FontSize="20" Grid.Row="2" Margin="10,20"/>
+        <ehl:EasyHighlightTextBlock x:Name="easyHightlight" Text="&lt;red_del>red_del&lt;/red_del> example" FontSize="20" Grid.Row="3" Margin="10,20"/>
+    </Grid>
+</Window>
+```
+in xmal.cs
+```C#
+ public partial class MainWindow : Window
+ {
+     public MainWindow()
+     {
+         InitializeComponent();
+         easyHighlight1.addDecorater("red_del", (string text, string tagName) => {
+             Run redDelRun = new Run(text);
+
+             TextDecoration del = new TextDecoration();
+             del.PenThicknessUnit = TextDecorationUnit.FontRecommended;
+             del.Pen = new Pen(Brushes.Black, 1.5);
+             del.Location = TextDecorationLocation.Strikethrough;
+             redDelRun.TextDecorations.Add(del);
+
+             redDelRun.Background = Brushes.Red;
+
+             return redDelRun;
+         });
+         
+         
+         return;
+     }
+
+     private void TextChangedEventHandler(object sender, TextChangedEventArgs args)
+     {
+         string target = M_TextBox.Text;
+         easyHighlight1.autoHighlight("red_del", target);
+         return;
+     }
+
+ }
+```
+
+look like:
+
+
 ## last
 If you neet to Hightligth the Text in TextbBlock too. **TRY** this SHIT !!! Any Problem contect me on email:51930595@qq.com
 
