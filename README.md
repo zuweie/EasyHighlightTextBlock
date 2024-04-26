@@ -2,6 +2,8 @@
 
 >A Easy Way to Highlight the Text using \<Tags\> like a html 
 
+![autohighlight](https://github.com/zuweie/photobed/blob/master/output.gif?raw=true)
+
 ## Introduce
 **When working on a WPF project** , I often use the TextBlock. I feel **ball-ache** When I want to highlight the string in TextBlock !!
 for example here's the code to Highlight Text by yellow :
@@ -181,20 +183,33 @@ in xmal.cs
      public MainWindow()
      {
          InitializeComponent();
-         easyHighlight1.addDecorater("red_del", (string text, string tagName) => {
-             Run redDelRun = new Run(text);
+         easyHighlight1.addDecorater("yellow_underline", (string text, string tagName) => {
+            Run redDelRun = new Run(text);
 
-             TextDecoration del = new TextDecoration();
-             del.PenThicknessUnit = TextDecorationUnit.FontRecommended;
-             del.Pen = new Pen(Brushes.Black, 1.5);
-             del.Location = TextDecorationLocation.Strikethrough;
-             redDelRun.TextDecorations.Add(del);
+            TextDecoration del = new TextDecoration();
+            del.PenThicknessUnit = TextDecorationUnit.FontRecommended;
+            del.Pen = new Pen(Brushes.Black, 1.5);
+            del.Location = TextDecorationLocation.Underline;
+            redDelRun.TextDecorations.Add(del);
 
-             redDelRun.Background = Brushes.Red;
+            redDelRun.Background = Brushes.Yellow;
 
-             return redDelRun;
-         });
-         
+            return redDelRun;
+        });
+
+easyHighlight.addDecorater("red_del", (string text, string tagName) => {
+    Run redDelRun = new Run(text);
+
+    TextDecoration del = new TextDecoration();
+    del.PenThicknessUnit = TextDecorationUnit.FontRecommended;
+    del.Pen = new Pen(Brushes.Black, 1.5);
+    del.Location = TextDecorationLocation.Strikethrough;
+    redDelRun.TextDecorations.Add(del);
+
+    redDelRun.Background = Brushes.Red;
+
+    return redDelRun;
+});
          
          return;
      }
@@ -210,7 +225,7 @@ in xmal.cs
 ```
 
 look like:
-
+![autohighlight](https://github.com/zuweie/photobed/blob/master/output.gif?raw=true)
 
 ## last
 If you neet to Hightligth the Text in TextbBlock too. **TRY** this SHIT !!! Any Problem contect me on email:51930595@qq.com
