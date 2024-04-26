@@ -2,7 +2,7 @@
 
 >A Easy Way to Highlight the Text using \<Tags\> like a html 
 
-![autohighlight](https://github.com/zuweie/photobed/blob/master/output.gif?raw=true)
+![autohighlight](https://raw.githubusercontent.com/zuweie/photobed/master/example2.gif)
 
 ## Introduce
 **When working on a WPF project** , I often use the TextBlock. I feel **ball-ache** When I want to highlight the string in TextBlock !!
@@ -225,7 +225,7 @@ easyHighlight.addDecorater("red_del", (string text, string tagName) => {
 ```
 
 look like:
-![autohighlight](https://github.com/zuweie/photobed/blob/master/output.gif?raw=true)
+![autohighlight](https://raw.githubusercontent.com/zuweie/photobed/master/example2.gif)
 
 ## last
 If you neet to Hightligth the Text in TextbBlock too. **TRY** this SHIT !!! Any Problem contect me on email:51930595@qq.com
