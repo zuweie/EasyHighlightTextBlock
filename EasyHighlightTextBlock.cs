@@ -29,6 +29,43 @@ namespace EasyHighlight
             this.UpdateText();
         }
 
+        public void autoHighlight(string tag, string target, StringComparison comparison=StringComparison.OrdinalIgnoreCase)
+        {
+            // TODO: 1 remove all the Tags 
+            //       2 add the tags to raw string
+            string rawText = Regex.Replace(this.Text, "<[^>]*>", string.Empty);
+            string highText = string.Empty;
+
+            if (!string.IsNullOrEmpty(target)) {
+                if (comparison == StringComparison.Ordinal)
+                {
+                    highText = rawText.Replace(target, $"<{tag}>{target}</{tag}>", comparison);
+                }
+                else {
+                    // 在大小写忽略匹配的时候，我们必须使用插<tag>，而不是替换。否则原来的大小写会乱了。
+                    highText = rawText;
+                    int startIndex = 0;
+                    do
+                    {
+                        startIndex = highText.IndexOf(target, startIndex, comparison);
+
+                        if (startIndex >= 0)
+                        {
+                            highText = highText.Insert(startIndex + target.Length, $"</{tag}>");
+                            highText = highText.Insert(startIndex, $"<{tag}>");
+                            startIndex = startIndex + $"<{tag}>".Length + target.Length + $"</{tag}>".Length;
+                        }
+                    } while (startIndex >= 0);
+                }
+            }
+            else
+            {
+                highText = rawText;
+            }
+
+            this.Text = highText;
+        }
+
 
         private void UpdateText()
         {
@@ -57,7 +94,7 @@ namespace EasyHighlight
                 if (match.Index != startIndex)
                 {
                     // 有未被标签包裹的字符串在前面
-                    Run unDecorateTextRun = new Run(Text.Substring(startIndex, match.Index - startIndex));
+                    Run unDecorateTextRun = new Run(input.Substring(startIndex, match.Index - startIndex));
                     unDecorateTextRun.Style = originStyle;
 
                     Inlines.Add(unDecorateTextRun);
@@ -79,7 +116,7 @@ namespace EasyHighlight
                 } else {
                     
                     // 没找到相应的 decorater 的，直接把原来的 string 弄回去。
-                    decorateTextRun = new Run(match.Groups[1].Value);
+                    decorateTextRun = new Run(match.Groups[2].Value);
                     decorateTextRun.Style = originStyle;
                 }
                 Inlines.Add(decorateTextRun);
@@ -88,9 +125,9 @@ namespace EasyHighlight
             }
 
             // 还有一部分 未被包裹
-            if (startIndex != Text.Length-1)
+            if (startIndex < input.Length)
             {
-                Run unDecorateRun = new Run(Text.Substring(startIndex, Text.Length - startIndex));
+                Run unDecorateRun = new Run(input.Substring(startIndex, input.Length - startIndex));
                 unDecorateRun.Style = originStyle;
                 Inlines.Add(unDecorateRun);
             }

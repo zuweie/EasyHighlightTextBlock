@@ -6,7 +6,33 @@
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>$(VersionPrefix)</Version>
+    <Version>1.0.1</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/zuweie/EasyHighlightTextBlock.git</RepositoryUrl>
+    <PackageTags>TextBlock;Highlight;Html</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Company>zuweie</Company>
+    <PackageProjectUrl>https://github.com/zuweie/EasyHighlightTextBlock/</PackageProjectUrl>
+    <Title>EasyHighlightTextBlock</Title>
+    <Description>Highlight Text within html style tags for TextBlock</Description>
+    <RepositoryType>git</RepositoryType>
+    <Authors>zuweie</Authors>
+    <PackageReleaseNotes>1 fix bug
+2 autoHighlight Implement</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Administrator\Downloads\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
